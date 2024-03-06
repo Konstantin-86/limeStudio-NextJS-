@@ -1,0 +1,314 @@
+.nav {
+  display: flex;
+  align-items: center;
+  color: #8c8580;
+}
+.listItemLink {
+  color: inherit;
+}
+.logo {
+  margin: 0 auto;
+  @media (max-width: 1230px) {
+    width: 250px;
+    img {
+      object-fit: cover;
+    }
+  }
+  @media (max-width: 1024px) {
+    margin: 0;
+    margin-right: auto;
+  }
+  @media (max-width: 480px) {
+    width: 140px;
+  }
+}
+.navListLeft,
+.navListRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  white-space: nowrap;
+}
+.navListLeft {
+  margin-right: 0;
+  @media (max-width: 1230px) {
+    gap: 15px;
+  }
+  @media (max-width: 1024px) {
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    height: 50dvh;
+    background-color: #f8e1e1;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    top: -150%;
+    transition: all 0.2s;
+  }
+}
+.navListRight {
+  gap: 38px;
+  @media (max-width: 1230px) {
+    gap: 15px;
+  }
+  @media (max-width: 1024px) {
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    height: 50dvh;
+    background-color: #f8e1e1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    top: -150%;
+    transition: all 0.2s;
+  }
+}
+.navListRightActive {
+  @media (max-width: 1024px) {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    width: 50vw;
+    height: calc(100dvh - 200px);
+    background-color: #f8e1e1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  @media (max-width: 480px) {
+    width: 100vw;
+  }
+}
+.navListLeftActive {
+  @media (max-width: 1024px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 200px;
+    background-color: #f8e1e1;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  @media (max-width: 480px) {
+    width: 100vw;
+  }
+}
+.navListItem {
+  font-size: 17px;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: -7px;
+    left: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+  }
+  @media (min-width: 1024px) {
+    &:hover {
+      &::before {
+        transform-origin: left;
+        transform: scaleX(1);
+        background-color: #8c8580;
+      }
+    }
+  }
+  a {
+    color: inherit;
+  }
+}
+.portfolio {
+  position: relative;
+  margin-right: 20px;
+  padding-bottom: 9px;
+  @media (min-width: 1024px) {
+    &:hover {
+      &::after {
+        transform: rotate(180deg) translateY(50%);
+      }
+      .portfolioSub {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 40%;
+    transform: translateY(-50%);
+    right: -27px;
+    padding: 12px;
+    background-image: url(../../images/icons/porfolioArrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: all 0.2s;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  .portfolioSub {
+    position: absolute;
+    top: 30px;
+    width: 188px;
+    overflow: hidden;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    padding-top: 9px;
+    transition: all 0.2s;
+    visibility: hidden;
+    opacity: 0;
+    white-space: wrap;
+    p {
+      padding: 9px 17px;
+      @media (min-width: 1024px) {
+        &:hover {
+          color: #fff;
+          background-color: #8c8580;
+        }
+      }
+    }
+  }
+}
+.listItemCalc {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    width: 18px;
+    height: 24px;
+    transform: translateY(-50%);
+    background-image: url("../../images/icons/calcIcon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+.navSocialsList {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 39px;
+  gap: 6px;
+  @media (max-width: 1230px) {
+    display: none;
+  }
+}
+.socialItem {
+  position: relative;
+  transition: 0.2s;
+  span {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  @media (min-width: 1024px) {
+    &:hover {
+      scale: 1.1;
+      span {
+        background-color: #25d366;
+      }
+    }
+  }
+}
+.burgerInner {
+  display: none;
+  .burger {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .burgerActive {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    .line1 {
+      top: 30px;
+      right: 10px;
+      transform: translate(10px, -10px) rotate(-45deg);
+      transition: all 0.2s;
+    }
+    .line2 {
+      opacity: 0;
+      transition: all 0.2s;
+    }
+    .line3 {
+      width: 30px;
+      top: 30px;
+      right: 10px;
+      transform: translate(10px, -10px) rotate(45deg);
+      transition: all 0.2s;
+    }
+  }
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .line1 {
+      position: absolute;
+      top: 13px;
+      right: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #8c8580;
+      transition: all 0.2s;
+    }
+    .line2 {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 25px;
+      height: 2px;
+      background-color: #8c8580;
+      transition: all 0.2s;
+    }
+    .line3 {
+      position: absolute;
+      top: 27px;
+      right: 0;
+      width: 20px;
+      height: 2px;
+      background-color: #8c8580;
+      transition: all 0.2s;
+    }
+  }
+  a {
+    color: #8c8580;
+    margin-right: 10px;
+  }
+}

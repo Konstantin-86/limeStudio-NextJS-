@@ -72,6 +72,7 @@
 .navListRightActive {
   @media (max-width: 1024px) {
     position: absolute;
+    z-index: 100;
     top: 200px;
     right: 0;
     width: 50vw;
@@ -89,6 +90,7 @@
 .navListLeftActive {
   @media (max-width: 1024px) {
     position: absolute;
+    z-index: 100;
     top: 0;
     right: 0;
     width: 50vw;
@@ -244,6 +246,7 @@
   display: none;
   .burger {
     position: relative;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,6 +255,7 @@
   }
   .burgerActive {
     position: relative;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;

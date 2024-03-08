@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cormorant } from "next/font/google";
 import Header from "../Components/header/Header";
 import "../styles/scss/main.scss";
 

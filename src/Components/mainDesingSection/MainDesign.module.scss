@@ -1,0 +1,53 @@
+.mainDesingWrap {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  margin-bottom: 100px;
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+  }
+}
+.mainDesingItem {
+}
+.mainDesingItemText {
+  padding-top: 49px;
+  margin-left: 134px;
+  @media (max-width: 1200px) {
+    padding-top: 0;
+  }
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+.mainDesingTitle {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 145%;
+  max-width: 470px;
+  margin-bottom: 55px;
+  @media (max-width: 480px) {
+    font-size: 30px;
+    line-height: 100%;
+  }
+  span {
+    position: relative;
+    color: #a6998e;
+  }
+}
+.mainDesingList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 65px;
+  li {
+    max-width: 580px;
+    font-family: "Idealist Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 20px;
+    list-style: disc;
+  }
+}

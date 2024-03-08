@@ -10,9 +10,9 @@ import "swiper/css/pagination";
 
 import "./mainSlider.scss";
 
-import img1 from "../../images/mainSlider/img1.png";
-import img2 from "../../images/mainSlider/img2.png";
-import img3 from "../../images/mainSlider/img3.png";
+import img1 from "@/images/mainSlider/img1.png";
+import img2 from "@/images/mainSlider/img2.png";
+import img3 from "@/images/mainSlider/img3.png";
 
 const cormorant = Cormorant({
   weight: ["400", "500", "600", "700"],
@@ -27,12 +27,12 @@ export default function MainSlider() {
       return '<span class="' + className + '">' + "</span>";
     },
   };
+
   return (
     <div className={cormorant.className}>
       <Swiper
         modules={[Pagination]}
         pagination={pagination}
-        /* pagination={true} */
         slidesPerView={1}
         spaceBetween={24}
         breakpoints={{

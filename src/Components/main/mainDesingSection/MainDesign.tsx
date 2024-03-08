@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Cormorant } from "next/font/google";
-import ButtonModal from "../buttonModal/ButtonModal";
+import ButtonModal from "../../buttonModal/ButtonModal";
 import styles from "./MainDesign.module.scss";
 
 import image from "@/images/mainDesingImage.png";
@@ -39,7 +39,10 @@ export default function MainDesing() {
               Онлайн подбор вариантов
             </li>
           </ul>
-          <ButtonModal text="БЕсплатная консультация дизайнера" />
+          <ButtonModal
+            textadf="Бeсплатная консультация дизайнера"
+            contentBgColor="#8c8580"
+          />
         </div>
         <div className={styles.mainDesingItem}>
           <Image src={image} alt="image"></Image>

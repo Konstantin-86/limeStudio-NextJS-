@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
 import Header from "../Components/header/Header";
 import "../styles/scss/main.scss";
+import Footer from "@/Components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Lime Studio",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

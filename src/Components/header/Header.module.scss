@@ -8,9 +8,11 @@
 }
 .logo {
   margin: 0 auto;
+  height: auto;
   @media (max-width: 1230px) {
     width: 250px;
     img {
+      height: auto;
       object-fit: cover;
     }
   }

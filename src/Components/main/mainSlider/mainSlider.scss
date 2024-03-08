@@ -40,6 +40,12 @@
     }
   }
 }
+.myslide {
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
 .swiper-pagination-bullet {
   width: 32px;
   height: 4px;

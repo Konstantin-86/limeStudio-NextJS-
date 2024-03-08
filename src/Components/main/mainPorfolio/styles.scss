@@ -1,0 +1,30 @@
+.mySlider2 {
+  width: 100%;
+  height: 600px;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+.myslide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  width: 32px;
+  height: 4px;
+  border-radius: 8px;
+  opacity: 1;
+  background-color: rgb(166, 153, 142, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(166, 153, 142, 1);
+} */

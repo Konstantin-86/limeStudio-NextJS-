@@ -11,7 +11,11 @@ const cormorant = Cormorant({
   display: "swap",
 });
 
-export default function ButtonModal({ text }: { text: string }) {
+type Props = {
+  textadf: string;
+  contentBgColor: string;
+};
+export default function ButtonModal({ textadf, contentBgColor }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -28,13 +32,13 @@ export default function ButtonModal({ text }: { text: string }) {
   return (
     <div className={cormorant.className}>
       <button onClick={showModal} className={styles.button}>
-        {text}
+        {textadf}
       </button>
       <ConfigProvider
         theme={{
           components: {
             Modal: {
-              contentBg: "#8c8580",
+              contentBg: contentBgColor,
             },
           },
         }}

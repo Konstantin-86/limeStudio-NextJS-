@@ -100,6 +100,15 @@
   width: 56px;
   height: 56px;
   background-color: #89b867;
+  transition: all 0.2s;
+  @media (hover: hover) {
+    &:hover {
+      width: 100px;
+      border-radius: 8px;
+    }
+    &:active {
+    }
+  }
 }
 .itemVideo {
   max-width: 512px;

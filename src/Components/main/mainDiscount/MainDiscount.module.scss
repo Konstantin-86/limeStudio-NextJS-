@@ -1,0 +1,86 @@
+.container {
+  max-width: 1584px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+.inner {
+  position: relative;
+  background-image: url(../../../images/mainDiscount/imageBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 93px;
+  color: #ffffff;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 41px;
+    max-width: 1048px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    .title {
+      font-size: 50px;
+      font-weight: 400;
+    }
+    .text {
+      font-family: "Idealist Sans", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: #d9d9d9;
+      margin-bottom: 20px;
+    }
+  }
+  .license {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+  }
+}
+.formInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 31px;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+  input {
+    background-color: #fff;
+    font-family: "Idealist Sans", sans-serif;
+    font-size: 18px;
+    padding-block: 18px;
+    padding-left: 20px;
+    max-width: 280px;
+    width: 100%;
+    color: #666972;
+    @media (max-width: 480px) {
+      max-width: 320px;
+    }
+  }
+  button {
+    padding: 18px 31px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: all 0.2s;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+      }
+      &:active {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import MainPotrfolio from "@/Components/main/mainPorfolio/MainPotrfolio";
 import MainScheme from "@/Components/main/mainScheme/MainScheme";
 import MainWhyWe from "@/Components/main/mainWhyWe/MainWhyWe";
 import MainReviews from "@/Components/main/mainReviews/MainReviews";
+import MainDiscount from "@/Components/main/mainDiscount/MainDiscount";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       </div>
       <MainWhyWe />
       <MainReviews />
+      <MainDiscount />
     </>
   );
 }

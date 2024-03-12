@@ -1,7 +1,10 @@
 "use client";
 import { useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 import styles from "./Header.module.scss";
 
 import logo from "../../images/logo.png";
@@ -9,6 +12,9 @@ import telegramm from "../../images/telegr.png";
 import whatsapp from "../../images/whatsapp.png";
 
 export default function Header() {
+  const pathname = usePathname();
+  const curPage = pathname === "/about";
+
   const [handleBurger, setHandleBurger] = useState(false);
   const closeBurger = () => setHandleBurger(false);
   return (
@@ -22,7 +28,13 @@ export default function Header() {
                 : `${styles.navList} ${styles.navListLeft}`
             }
           >
-            <li className={styles.navListItem}>
+            <li
+              className={
+                pathname === "/about"
+                  ? `${styles.navListItemActive} ${styles.navListItem}`
+                  : styles.navListItem
+              }
+            >
               <Link
                 onClick={closeBurger}
                 className={styles.listItemLink}
@@ -31,7 +43,13 @@ export default function Header() {
                 Кто мы
               </Link>
             </li>
-            <li className={styles.navListItem}>
+            <li
+              className={
+                pathname === "/service"
+                  ? `${styles.navListItemActive} ${styles.navListItem}`
+                  : styles.navListItem
+              }
+            >
               <Link
                 onClick={closeBurger}
                 className={styles.listItemLink}
@@ -40,7 +58,13 @@ export default function Header() {
                 Услуги
               </Link>
             </li>
-            <li className={styles.navListItem}>
+            <li
+              className={
+                pathname === "/portfolio"
+                  ? `${styles.navListItemActive} ${styles.navListItem}`
+                  : styles.navListItem
+              }
+            >
               <Link
                 onClick={closeBurger}
                 className={`${styles.listItemLink} ${styles.portfolio}`}
@@ -54,7 +78,13 @@ export default function Header() {
                 </div>
               </Link>
             </li>
-            <li className={styles.navListItem}>
+            <li
+              className={
+                pathname === "/contact"
+                  ? `${styles.navListItemActive} ${styles.navListItem}`
+                  : styles.navListItem
+              }
+            >
               <Link
                 onClick={closeBurger}
                 className={styles.listItemLink}
@@ -80,7 +110,13 @@ export default function Header() {
                 : `${styles.navList} ${styles.navListRight}`
             }
           >
-            <li className={`${styles.navListItem} ${styles.listItemCalc}`}>
+            <li
+              className={
+                pathname === "/calc"
+                  ? `${styles.navListItemActive} ${styles.navListItem} ${styles.listItemCalc}`
+                  : `${styles.navListItem} ${styles.listItemCalc}`
+              }
+            >
               <Link
                 onClick={closeBurger}
                 className={styles.listItemLink}

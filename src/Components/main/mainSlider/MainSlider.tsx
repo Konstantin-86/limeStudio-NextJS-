@@ -49,6 +49,7 @@ export default function MainSlider() {
           <Link href="/portfolio/1">
             <Image
               className="slideImage"
+              priority
               width={512}
               height={713}
               src={img1}
@@ -61,6 +62,7 @@ export default function MainSlider() {
           <Link href="/portfolio/2">
             <Image
               className="slideImage"
+              priority
               width={512}
               height={713}
               src={img2}
@@ -73,6 +75,7 @@ export default function MainSlider() {
           <Link href="/portfolio/3">
             <Image
               className="slideImage"
+              priority
               width={512}
               height={713}
               src={img3}

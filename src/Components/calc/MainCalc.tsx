@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { ChangeEvent } from "react";
 
 import image1 from "../../images/calc/image1.png";
 import styles from "./MainCalc.module.scss";
@@ -15,11 +16,16 @@ const cormorant = Cormorant({
 });
 const MainCalc = () => {
   const [subTitle, setSubTitle] = useState("Комплексное оформление окна");
-  const [valueInpt, setValueInpt] = useState("");
+  const [curtainsInptValue, setCurtainsInptValue] = useState("");
+  const [tulleInptValue, setTulleInptValue] = useState("");
 
-  const valInptFunc = (e) => {
-    setValueInpt(e.target.value);
-    console.log(valueInpt);
+  const curtainsInptValueFunc = (e: ChangeEvent<HTMLInputElement>) => {
+    setCurtainsInptValue(e.target.value);
+    console.log(curtainsInptValue);
+  };
+  const tulleInptValueFunc = (e: ChangeEvent<HTMLInputElement>) => {
+    setTulleInptValue(e.target.value);
+    console.log(tulleInptValue);
   };
   return (
     <div className={cormorant.className}>
@@ -57,9 +63,16 @@ const MainCalc = () => {
                     type="radio"
                     name="firstline"
                     value={"curtainsYes"}
-                    onChange={(e) => valInptFunc(e)}
+                    onChange={(e) => curtainsInptValueFunc(e)}
                   />
-                  <label className={styles.label} htmlFor="curtainsYes">
+                  <label
+                    className={
+                      curtainsInptValue === "curtainsYes"
+                        ? styles.labelActive
+                        : styles.label
+                    }
+                    htmlFor="curtainsYes"
+                  >
                     Да
                   </label>
                   <input
@@ -68,8 +81,16 @@ const MainCalc = () => {
                     type="radio"
                     name="firstline"
                     value={"curtainsNo"}
+                    onChange={(e) => curtainsInptValueFunc(e)}
                   />
-                  <label className={styles.label} htmlFor="curtainsNo">
+                  <label
+                    className={
+                      curtainsInptValue === "curtainsNo"
+                        ? styles.labelActive
+                        : styles.label
+                    }
+                    htmlFor="curtainsNo"
+                  >
                     Нет
                   </label>
                 </div>
@@ -81,8 +102,16 @@ const MainCalc = () => {
                     type="radio"
                     name="secondline"
                     value={"TulleYes"}
+                    onChange={(e) => tulleInptValueFunc(e)}
                   />
-                  <label className={styles.label} htmlFor="TulleYes">
+                  <label
+                    className={
+                      tulleInptValue === "TulleYes"
+                        ? styles.labelActive
+                        : styles.label
+                    }
+                    htmlFor="TulleYes"
+                  >
                     Да
                   </label>
                   <input
@@ -91,8 +120,16 @@ const MainCalc = () => {
                     type="radio"
                     name="secondline"
                     value={"TulleNo"}
+                    onChange={(e) => tulleInptValueFunc(e)}
                   />
-                  <label className={styles.label} htmlFor="TulleNo">
+                  <label
+                    className={
+                      tulleInptValue === "TulleNo"
+                        ? styles.labelActive
+                        : styles.label
+                    }
+                    htmlFor="TulleNo"
+                  >
                     Нет
                   </label>
                 </div>

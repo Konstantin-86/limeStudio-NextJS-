@@ -1,5 +1,9 @@
-import Link from "next/link";
+import AboutContent from "@/Components/about/AboutContent";
 
 export default function About() {
-  return <div>About page</div>;
+  return (
+    <div>
+      <AboutContent />
+    </div>
+  );
 }

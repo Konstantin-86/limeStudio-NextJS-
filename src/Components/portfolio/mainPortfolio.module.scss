@@ -1,0 +1,48 @@
+.container {
+  max-width: 1584px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+.innerItems {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.mainTitle {
+  text-align: center;
+  font-size: 33px;
+  margin: 20px 0;
+}
+.item {
+  margin-bottom: 70px;
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.forWhat,
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #8c8580;
+}
+.title {
+  color: #181818;
+}
+.button {
+  display: block;
+  padding: 19px 20px 16px 20px;
+  color: #fff;
+  background-color: #8c8580;
+  text-transform: uppercase;
+  font-family: "Idealist Sans", sans-serif;
+  font-size: 16px;
+  max-width: 190px;
+  margin: 70px auto;
+}

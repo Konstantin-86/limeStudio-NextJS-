@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 
 import styles from "./Header.module.scss";
 
@@ -13,10 +13,16 @@ import whatsapp from "../../images/whatsapp.png";
 
 export default function Header() {
   const pathname = usePathname();
-  const curPage = pathname === "/about";
+  const router = useRouter();
+  console.log(router);
 
   const [handleBurger, setHandleBurger] = useState(false);
   const closeBurger = () => setHandleBurger(false);
+
+  const routerFunc = (e: any) => {
+    e.preventDefault();
+    router.push("/about");
+  };
   return (
     <header className={styles.header}>
       <div className="container">
@@ -61,8 +67,8 @@ export default function Header() {
             <li
               className={
                 pathname === "/portfolio"
-                  ? `${styles.navListItemActive} ${styles.navListItem}`
-                  : styles.navListItem
+                  ? `${styles.navListItemActive} ${styles.navListItem} ${styles.portfolioItem}`
+                  : `${styles.navListItem} ${styles.portfolioItem}`
               }
             >
               <Link
@@ -71,12 +77,14 @@ export default function Header() {
                 href="/portfolio"
               >
                 Портфолио
-                <div className={styles.portfolioSub}>
-                  <p>Шторы</p>
-                  <p>Карнизы</p>
-                  <p>Солнцезащитные системы</p>
-                </div>
               </Link>
+              <div className={styles.portfolioSub}>
+                <Link href={"/portfolio/curtains"}>Шторы</Link>
+                <Link href={"/portfolio/cornices"}>Карнизы</Link>
+                <Link href={"/portfolio/sunProtection"}>
+                  Солнцезащитные системы
+                </Link>
+              </div>
             </li>
             <li
               className={

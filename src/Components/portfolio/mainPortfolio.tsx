@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import axios from "axios";
+
 import { Cormorant } from "next/font/google";
 import styles from "./mainPortfolio.module.scss";
 
@@ -15,54 +16,48 @@ const cormorant = Cormorant({
   display: "swap",
 });
 
+type itemsT = {
+  id: number;
+  link: string;
+  name: string;
+  image: string;
+};
+
 const MainPortfolio = () => {
   const [items, setItems] = useState([]);
-  const [limit, setLimlit] = useState(3);
 
   useEffect(() => {
     axios
-      .get("https://27792221a552b52d.mokky.dev/items", {
-        params: {
-          limit: limit,
-        },
-      })
+      .get("https://27792221a552b52d.mokky.dev/portfolio", {})
       .then((data) => {
-        setItems(data.data.items);
+        setItems(data.data);
       })
       .catch((err) => console.log(err));
-  }, [limit]);
+  }, []);
   console.log(items);
-
-  const showMore = () => {
-    setLimlit(limit + 3);
-  };
 
   return (
     <>
       <div className={cormorant.className}>
         <div className={styles.container}>
           <h1 className={styles.mainTitle}>Портфолио</h1>
-          <div className={styles.innerItems}>
-            {items &&
-              items.map((item: any) => (
-                <div className={styles.item} key={item.id}>
-                  <Link href={`/portfolio/${item.id}`}>
+          <div className={styles.innerItem}>
+            {items.map((item: itemsT) => (
+              <div className={styles.item} key={item.id}>
+                <Link href={`/portfolio/${item.link}`}>
+                  <p>{item.name}</p>
+                  <div className={styles.innerImg}>
                     <Image
-                      priority
                       width={424}
                       height={591}
-                      src={item.image.main}
-                      alt="mainImage"
+                      src={item.image}
+                      alt="portfolio"
                     ></Image>
-                  </Link>
-                  <p className={styles.forWhat}># {item.forWhat}</p>
-                  <h2 className={styles.title}>{item.name}</h2>
-                </div>
-              ))}
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
-          <button className={styles.button} onClick={showMore}>
-            Показать еще
-          </button>
         </div>
       </div>
     </>

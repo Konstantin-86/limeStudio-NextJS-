@@ -1,9 +1,9 @@
-import Link from "next/link";
+import MainPortfolio from "@/Components/portfolio/mainPortfolio";
 
 export default function Portfolio() {
   return (
     <>
-      <Link href={"/portfolio/curtains"}>curtains</Link>
+      <MainPortfolio />
     </>
   );
 }

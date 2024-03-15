@@ -68,7 +68,6 @@ export default function ButtonModal({ textadf, contentBgColor }: Props) {
           </div>
         </Modal>
       </ConfigProvider>
-      ;
     </div>
   );
 }
